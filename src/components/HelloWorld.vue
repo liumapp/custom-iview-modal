@@ -17,6 +17,7 @@
 </template>
 <script>
 import modalDetail from './modalDetail.vue'
+import formModal from './formModal.vue'
 export default {
   name: 'HelloWorld',
   data () {
@@ -25,7 +26,7 @@ export default {
     }
   },
   components: {
-    modalDetail
+    modalDetail, formModal
   },
   methods: {
     showView () {
@@ -48,6 +49,18 @@ export default {
     },
     withForm () {
       this.$Message.info('modal with form showed');
+      this.$Modal.info({
+        scrollable: true,
+        render: h => {
+          return h(formModal, {
+            on: {
+              value1: (value1) => {
+                this.$Message.info('we get value1 from formModal ! and value is : ' + value1);
+              }
+            }
+          })
+        }
+      })
     }
   }
 }
