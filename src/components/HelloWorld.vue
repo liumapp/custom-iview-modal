@@ -15,8 +15,8 @@
     </ul>
   </div>
 </template>
-
 <script>
+import modalDetail from './modalDetail.vue'
 export default {
   name: 'HelloWorld',
   data () {
@@ -24,15 +24,27 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
+  components: {
+    modalDetail
+  },
   methods: {
     showView () {
       this.$Message.info('only view modal showed');
       this.$Modal.info({
         scrollable: true,
-        render: () => {
-          return h();
+        render: h => {
+          return h(modalDetail, {
+            scrollable: true,
+            props: {
+              value: {
+                name: '张三',
+                sex: '男',
+                age: 16
+              }
+            }
+          });
         }
-      });
+      })
     },
     withForm () {
       this.$Message.info('modal with form showed');
