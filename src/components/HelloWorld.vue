@@ -1,3 +1,10 @@
+/**
+ * @file HelloWorld.vue
+ * @author liumapp
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 5/28/18
+ */
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -20,6 +27,12 @@ export default {
   methods: {
     showView () {
       this.$Message.info('only view modal showed');
+      this.$Modal.info({
+        scrollable: true,
+        render: () => {
+          return h();
+        }
+      });
     },
     withForm () {
       this.$Message.info('modal with form showed');
