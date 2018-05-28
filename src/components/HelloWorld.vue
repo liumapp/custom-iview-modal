@@ -3,7 +3,8 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
-      <li><button @click="showModal">show me modal</button></li>
+      <li><button @click="showView">only view</button></li>
+      <li><button @click="withForm">with form</button></li>
     </ul>
   </div>
 </template>
@@ -17,8 +18,11 @@ export default {
     }
   },
   methods: {
-    showModal () {
-
+    showView () {
+      this.$Message.info('only view modal showed');
+    },
+    withForm () {
+      this.$Message.info('modal with form showed');
     }
   }
 }
