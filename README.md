@@ -1,6 +1,8 @@
 # iview-modal-form
 Execute input operations in iView's modal .
 
+[中文文档](http://www.liumapp.com/articles/2018/05/29/1527511707286.html)
+
 ## how to use
 
 * run ``` cnpm clean install ```
